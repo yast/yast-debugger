@@ -13,9 +13,9 @@ Summary:	-
 
 @PREP@
 
-@BUILD-QT-PROGRAM@
+@BUILD-QT@
 
-@INSTALL-PROGRAM@
+@INSTALL@
 
 @CLEAN@
 
