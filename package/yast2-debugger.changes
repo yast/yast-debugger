@@ -1,4 +1,9 @@
 -------------------------------------------------------------------
+Wed Aug 21 20:07:05 CEST 2002 - ro@suse.de
+
+- fixed neededforbuild (use yast2-devel-packages)
+
+-------------------------------------------------------------------
 Mon Jul 01 17:56:34 CEST 2002 - arvin@suse.de
 
 - fixed linking on x86-64
