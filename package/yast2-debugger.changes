@@ -1,4 +1,9 @@
 -------------------------------------------------------------------
+Sat Feb 28 19:29:10 CET 2004 - kkaempf@suse.de
+
+- use counted YCode pointer
+
+-------------------------------------------------------------------
 Tue Feb  3 10:35:56 CET 2004 - visnov@suse.cz
 
 - Fix compilation for NI

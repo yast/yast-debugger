@@ -639,7 +639,7 @@ Bibo::handle_ycpblock (int num)
     }
 
     Parser parser ((const char*) tmp);
-    YCode* value = parser.parse ();
+    YCodePtr value = parser.parse ();
 
     if (!value || value->isError ())
 	oscar[num]->setText (tmp);
