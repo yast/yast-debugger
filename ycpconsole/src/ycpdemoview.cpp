@@ -16,8 +16,8 @@
  *                                                                         *
  ***************************************************************************/
 
-#include <qmessagebox.h> 
-#include <qtimer.h> 
+#include <qmessagebox.h>
+#include <qtimer.h>
 #include <unistd.h>
 #include <sys/types.h>
 #include <sys/stat.h>
@@ -52,30 +52,30 @@ YcpdemoView::YcpdemoView( QWidget* parent,  const char* name, WFlags fl, Ycpdemo
 
    connect( runTimer, SIGNAL(timeout()), this, SLOT(slotRunTimerDone()) );
    connect( checkTimer, SIGNAL(timeout()), this, SLOT(slotCheckTimerDone()) );
-    
+
     if ( !name )
 	setName( "YcpdemoView" );
 
-    Form1Layout = new QGridLayout( this ); 
+    Form1Layout = new QGridLayout( this );
     Form1Layout->setSpacing( 6 );
     Form1Layout->setMargin( 11 );
 
-    Layout10 = new QVBoxLayout; 
+    Layout10 = new QVBoxLayout;
     Layout10->setSpacing( 6 );
     Layout10->setMargin( 0 );
 
-    Layout8 = new QHBoxLayout; 
+    Layout8 = new QHBoxLayout;
     Layout8->setSpacing( 6 );
     Layout8->setMargin( 0 );
 
-    Layout4 = new QVBoxLayout; 
+    Layout4 = new QVBoxLayout;
     Layout4->setSpacing( 6 );
     Layout4->setMargin( 0 );
 
     ycpInput = new QMultiLineEdit( this, "MultiLineEdit1" );
     Layout4->addWidget( ycpInput );
 
-    Layout3 = new QHBoxLayout; 
+    Layout3 = new QHBoxLayout;
     Layout3->setSpacing( 6 );
     Layout3->setMargin( 0 );
 
@@ -84,28 +84,28 @@ YcpdemoView::YcpdemoView( QWidget* parent,  const char* name, WFlags fl, Ycpdemo
     runycp->setText( "Run" );
     QFont runycp_font(  runycp->font() );
     runycp_font.setBold( TRUE );
-    runycp->setFont( runycp_font ); 
+    runycp->setFont( runycp_font );
     Layout3->addWidget( runycp );
 
     checkycp = new QPushButton( this, "CheckButton" );
     checkycp->setText( "Check" );
     QFont checkycp_font(  checkycp->font() );
     checkycp_font.setBold( TRUE );
-    checkycp->setFont( checkycp_font ); 
+    checkycp->setFont( checkycp_font );
     Layout3->addWidget( checkycp );
 
     clearycp = new QPushButton( this, "ClearButton" );
     clearycp->setText( "Clear" );
     QFont clearycp_font(  clearycp->font() );
     clearycp_font.setBold( TRUE );
-    clearycp->setFont( clearycp_font ); 
+    clearycp->setFont( clearycp_font );
     Layout3->addWidget( clearycp );
     connect(clearycp,SIGNAL(clicked()), this, SLOT(slotClearClicked()) );
-    
+
     Layout4->addLayout( Layout3 );
     Layout8->addLayout( Layout4 );
 
-    Layout7 = new QVBoxLayout; 
+    Layout7 = new QVBoxLayout;
     Layout7->setSpacing( 6 );
     Layout7->setMargin( 0 );
 
@@ -113,7 +113,7 @@ YcpdemoView::YcpdemoView( QWidget* parent,  const char* name, WFlags fl, Ycpdemo
     TextLabel2->setText( "Load an Example:" );
     QFont TextLabel2_font(  TextLabel2->font() );
     TextLabel2_font.setBold( TRUE );
-    TextLabel2->setFont( TextLabel2_font ); 
+    TextLabel2->setFont( TextLabel2_font );
     Layout7->addWidget( TextLabel2 );
 
     for ( int i = 1; i <= EXAMPLE_NO; i++ )
@@ -121,7 +121,7 @@ YcpdemoView::YcpdemoView( QWidget* parent,  const char* name, WFlags fl, Ycpdemo
        QString number;
        number.setNum(i);
        QString label;
-       
+
        if ( i == EXAMPLE_NO-1 )
        {
 	  label = QString("Shell Example");
@@ -134,9 +134,9 @@ YcpdemoView::YcpdemoView( QWidget* parent,  const char* name, WFlags fl, Ycpdemo
        {
 	  label = QString("Example ")+number;
        }
-       
+
        QPushButton *button= new QPushButton( label, this, number );
-       
+
        Layout7->addWidget( button );
        connect(button, SIGNAL(clicked()), this, SLOT(slotButtonClicked()));
     }
@@ -146,7 +146,7 @@ YcpdemoView::YcpdemoView( QWidget* parent,  const char* name, WFlags fl, Ycpdemo
     CheckBox2->setChecked(true);	// default is debug ON
     Layout7->addWidget( CheckBox2 );
     connect(CheckBox2, SIGNAL(clicked()), this, SLOT(slotDebugClicked()));
-     
+
     //PushButton6 = new QPushButton( this, "PushButton6" );
     //PushButton6->setText( "Decrease max. debug" );
     //Layout7->addWidget( PushButton6 );
@@ -160,7 +160,7 @@ YcpdemoView::YcpdemoView( QWidget* parent,  const char* name, WFlags fl, Ycpdemo
     Line1->setFrameStyle( QFrame::HLine | QFrame::Sunken );
     Layout10->addWidget( Line1 );
 
-    Layout9 = new QHBoxLayout; 
+    Layout9 = new QHBoxLayout;
     Layout9->setSpacing( 6 );
     Layout9->setMargin( 0 );
 
@@ -168,7 +168,7 @@ YcpdemoView::YcpdemoView( QWidget* parent,  const char* name, WFlags fl, Ycpdemo
     Error_messages->setText(  "Error messages"  );
     QFont Error_messages_font(  Error_messages->font() );
     Error_messages_font.setBold( TRUE );
-    Error_messages->setFont( Error_messages_font ); 
+    Error_messages->setFont( Error_messages_font );
     Layout9->addWidget( Error_messages );
     QSpacerItem* spacer_2 = new QSpacerItem( 20, 20, QSizePolicy::Expanding, QSizePolicy::Minimum );
     Layout9->addItem( spacer_2 );
@@ -189,7 +189,7 @@ YcpdemoView::YcpdemoView( QWidget* parent,  const char* name, WFlags fl, Ycpdemo
     Error_messages_2->setText(  "Debug messages"  );
     QFont Error_messages_2_font(  Error_messages_2->font() );
     Error_messages_2_font.setBold( TRUE );
-    Error_messages_2->setFont( Error_messages_2_font ); 
+    Error_messages_2->setFont( Error_messages_2_font );
     Layout10->addWidget( Error_messages_2 );
 
     textView2 = new QTextView( this, "TextView2" );
@@ -202,39 +202,39 @@ YcpdemoView::YcpdemoView( QWidget* parent,  const char* name, WFlags fl, Ycpdemo
 
     /** connect textChanged from MultiLineEdit with doc */
     connect(ycpInput, SIGNAL( textChanged() ), doc, SLOT( slotTextChanged()));
-      
+
     /** connect clicked from PushButton to private slot */
     connect(runycp, SIGNAL( clicked() ), this, SLOT( slotRunYcp() ));
     connect(checkycp, SIGNAL( clicked() ), this, SLOT( slotCheckYcp() ));
-  
+
 }
 
-/*  
+/*
  *  Main event handler. Reimplemented to handle application
  *  font changes
  */
 bool YcpdemoView::event( QEvent* ev )
 {
-    bool ret = QWidget::event( ev ); 
+    bool ret = QWidget::event( ev );
     if ( ev->type() == QEvent::ApplicationFontChange ) {
 	QFont runycp_font(  runycp->font() );
 	runycp_font.setBold( TRUE );
-	runycp->setFont( runycp_font ); 
+	runycp->setFont( runycp_font );
 	QFont checkycp_font(  checkycp->font() );
 	checkycp_font.setBold( TRUE );
-	checkycp->setFont( checkycp_font ); 
+	checkycp->setFont( checkycp_font );
 	QFont clearycp_font(  clearycp->font() );
 	clearycp_font.setBold( TRUE );
-	clearycp->setFont( clearycp_font ); 
+	clearycp->setFont( clearycp_font );
 	QFont TextLabel2_font(  TextLabel2->font() );
 	TextLabel2_font.setBold( TRUE );
-	TextLabel2->setFont( TextLabel2_font ); 
+	TextLabel2->setFont( TextLabel2_font );
 	QFont Error_messages_font(  Error_messages->font() );
 	Error_messages_font.setBold( TRUE );
-	Error_messages->setFont( Error_messages_font ); 
+	Error_messages->setFont( Error_messages_font );
 	QFont Error_messages_2_font(  Error_messages_2->font() );
 	Error_messages_2_font.setBold( TRUE );
-	Error_messages_2->setFont( Error_messages_2_font ); 
+	Error_messages_2->setFont( Error_messages_2_font );
     }
     return ret;
 }
@@ -245,7 +245,7 @@ YcpdemoView::~YcpdemoView()
 
 //
 // slot is called - when SIGNAL documentChanged is emitted from YcpdemoDoc
-//		  - internal when loading an example 
+//		  - internal when loading an example
 //
 void YcpdemoView::slotDocumentChanged()
 {
@@ -270,14 +270,14 @@ void YcpdemoView::slotDocumentChanged()
 void YcpdemoView::slotClearClicked()
 {
    textView1->setText("");
-   textView2->setText("");   
+   textView2->setText("");
 
    deleteFile( nonameFile );
    document->load( nonameFile );
-   
+
    ycpInput->setText("");
 
-   emit setCaption( nonameFile ); 
+   emit setCaption( nonameFile );
 }
 
 //
@@ -320,7 +320,7 @@ void YcpdemoView::slotCheckYcp()
       if( checkTimer->isActive() )
 	 checkTimer->stop();
       // start timer (until it will be stopped)
-      checkTimer->start( 500, FALSE );      
+      checkTimer->start( 500, FALSE );
    }
 }
 
@@ -330,7 +330,7 @@ void YcpdemoView::slotCheckYcp()
 bool YcpdemoView::runYcpCommand(char *command)
 {
    bool ret = false;
-   
+
    if ( document->isModified() )
    {
       // show Popup "Save file?"
@@ -350,7 +350,7 @@ bool YcpdemoView::runYcpCommand(char *command)
 	 printf("File not saved.\n");
       };
    }
-   
+
    if ( strlen(document->getFilename()) == 0 || strlen(document->getContents()) == 0 )
    {
       printf("Nothing to do!!!\n");
@@ -381,7 +381,7 @@ void YcpdemoView::showErrorLog( QString &logfile, QTextView *view )
 {
    char systemCommand[300];
    QString fileContents;
-   
+
    sprintf(systemCommand, "grep \"<3>\" %s > %s", (const char *)logfile, (const char*)errorLogfile );
 
    runYcpCommand(systemCommand);
@@ -389,9 +389,9 @@ void YcpdemoView::showErrorLog( QString &logfile, QTextView *view )
    QFile f(errorLogfile);
    if ( f.open(IO_ReadOnly) )
    {    // file opened successfully
-      QTextStream t( &f ); 
+      QTextStream t( &f );
       while ( !t.eof() )
-      {        
+      {
 	 fileContents = t.read();
       }
       f.close();
@@ -414,16 +414,16 @@ void YcpdemoView::slotRunYcp()
 
    QString logfile;
    char *login = getlogin();
-   
+
    if ( getuid() == 0 )		// root
    {
-      logfile = QString("/var/log/y2log");
+      logfile = QString("/var/log/YaST2/y2log");
    }
    else
    {
       logfile = QString( "/suse/")+QString(login)+QString("/.y2log") ;
    }
-   
+
    deleteFile(logfile);
 
    sprintf( systemCommand, "%s /usr/lib/YaST2/bin/y2qt %s qt -T -geometry 640x480 -style=platinum -font '-gnu-unifont-medium-r-normal--16-160-75-75-p-80-iso10646-1' &",
@@ -446,17 +446,17 @@ void YcpdemoView::slotRunTimerDone()
 {
    QString logfile;
    char *login = getlogin();
-   
+
    if ( getuid() == 0 )		// root
    {
-      logfile = QString("/var/log/y2log");
+      logfile = QString("/var/log/YaST2/y2log");
    }
    else
    {
       logfile = QString( "/suse/")+QString(login)+QString("/.y2log") ;
    }
 
-   
+
    if ( !showLogging( logfile, &logfileLength, &logfileRetries, textView2 ) )
    {
       runTimer->stop();
@@ -465,7 +465,7 @@ void YcpdemoView::slotRunTimerDone()
 }
 
 //
-// deletes file 
+// deletes file
 //
 void YcpdemoView::deleteFile(QString &filename)
 {
@@ -487,7 +487,7 @@ void YcpdemoView::slotButtonClicked()
    // set example filename
    const QString example_no = button->name();
    const QString example_file = ycpExamples[example_no.toInt()-1];
-   
+
    printf( "Loading file: %s\n",  (const char *)example_file );
 
    // load example file
@@ -506,7 +506,7 @@ bool YcpdemoView::showLogging( QString &logfile, int *fileLength,
 {
    bool ret = true;
    QString fileContents;
-   QFile f(logfile);	
+   QFile f(logfile);
    struct stat stat_info;
 
    printf("LOGGING to: %s\n", (const char *)logfile);
@@ -517,9 +517,9 @@ bool YcpdemoView::showLogging( QString &logfile, int *fileLength,
       {
 	 // the file exists and filesize has not changed since last call
 	 if ( f.open(IO_ReadOnly) )
-	 {  
+	 {
 	    QTextStream t( &f );        // use a text stream
-      
+
 	    while ( !t.eof() ) {        // until end of file...
 	       fileContents = t.read();
 	    }
@@ -533,7 +533,7 @@ bool YcpdemoView::showLogging( QString &logfile, int *fileLength,
       {
 	 // store actual filelength and try it again
 	 *fileLength = stat_info.st_size;
-	 ret = true; 
+	 ret = true;
       }
    }
    else
@@ -547,7 +547,7 @@ bool YcpdemoView::showLogging( QString &logfile, int *fileLength,
       else
 	 ret = true;
    }
-   
+
    printf("Length of logfile: %d, return: %s\n", *fileLength, ret?"true":"false" );
 
    return ret;
