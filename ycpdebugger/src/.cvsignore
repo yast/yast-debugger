@@ -1,0 +1,10 @@
+Makefile
+Makefile.in
+*.lo
+*.la
+*.o
+.deps
+.libs
+*.moc.cc
+*.moc.h
+ycpdebugger

@@ -1,0 +1,10 @@
+ycpconsole
+Makefile
+Makefile.in
+.deps
+.libs
+*.o
+*.lo
+*.la
+*.moc.cpp
+translate.conf

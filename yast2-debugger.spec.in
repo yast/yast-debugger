@@ -1,0 +1,30 @@
+@HEADER-COMMENT@
+
+# neededforbuild  autoconf automake yast2-devtools libycp libycp-devel libxcrypt libxcrypt-devel gpp libgpp qt3-devel-packages xf86
+
+@HEADER@
+Provides:	ycpconsole
+Obsoletes:	ycpconsole
+
+Summary:	-
+
+%description
+-
+
+@PREP@
+
+@BUILD-SCRIPT@
+
+@INSTALL-SCRIPT@
+
+@CLEAN@
+
+%files
+%defattr(-,root,root)
+
+# from ycpconsole
+/usr/bin/ycpconsole
+
+# from ycpdebugger
+/usr/bin/ycpdebugger
+
