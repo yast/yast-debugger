@@ -1,5 +1,5 @@
 #
-# Makefile.am for modules/y2m_menu
+# Makefile.am for debugger/ycpconsole/src
 #
 
 MOC=$(QTDIR)/bin/moc

@@ -1,5 +1,5 @@
 #
-# Makefile.am for ycpdebugger/src
+# Makefile.am for debugger/ycpdebugger/src
 #
 
 MOC = $(QTDIR)/bin/moc
