@@ -1,4 +1,9 @@
 -------------------------------------------------------------------
+Fri Apr 02 15:59:59 CEST 2004 - arvin@suse.de
+
+- finally changed license to GPL for good
+
+-------------------------------------------------------------------
 Sat Feb 28 19:29:10 CET 2004 - kkaempf@suse.de
 
 - use counted YCode pointer
