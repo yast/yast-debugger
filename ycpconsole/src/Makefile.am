@@ -2,30 +2,24 @@
 # Makefile.am for debugger/ycpconsole/src
 #
 
-MOC=$(QTDIR)/bin/moc
-
-etcdir = $(YAST2DIR)/etc
-
-#etc_DATA = translate.conf
-
+MOC = $(QTDIR)/bin/moc
 
 bin_PROGRAMS = ycpconsole
-ycpconsole_SOURCES = \
+ycpconsole_SOURCES =		\
 	main.cpp		\
-	ycpdemoview.cpp	\
-	ycpdemodoc.cpp	\
-	ycpdemo.cpp	\
-	ycpdemo.h	\
-	ycpdemodoc.h	\
+	ycpdemoview.cpp		\
+	ycpdemodoc.cpp		\
+	ycpdemo.cpp		\
+	ycpdemo.h		\
+	ycpdemodoc.h		\
 	ycpdemoview.h
 
-BUILT_SOURCES =	 \
-	ycpdemo.moc.cpp \
-	ycpdemodoc.moc.cpp \
+BUILT_SOURCES =			\
+	ycpdemo.moc.cpp		\
+	ycpdemodoc.moc.cpp	\
 	ycpdemoview.moc.cpp
 
-
-ycpconsole_LDADD   = -L$(QTDIR)/lib -lqt-mt -lXext -lX11
+ycpconsole_LDADD   = -L$(QTLIBDIR) -lqt-mt -lXext -lX11
 
 ycpdemo.o:		ycpdemo.moc.cpp
 ycpdemodoc.o:		ycpdemodoc.moc.cpp
@@ -38,18 +32,11 @@ ycpdemoview.moc.cpp:	ycpdemoview.h
 %.moc.cpp: %.h
 	$(MOC) $< -o $@
 
-#translate.conf: ycpconsole
-#	@./make_translate_conf *.cpp
+INCLUDES= -I$(QTDIR)/include
 
-# set the include path for X, qt and KDE
-INCLUDES= -I$(QTDIR)/include -DSYSCONFDIR=\"$(sysconfdir)\" -DYAST2DIR=\"$(YAST2DIR)\" -DICONDIR=\"$(ICONDIR)\"
+ycpconsole_LDFLAGS = $(all_libraries)
 
-
-# the library search path. 
-ycpconsole_LDFLAGS = $(all_libraries) 
-
-
-EXTRA_DIST =	 \
-	filenew.xpm	\
+EXTRA_DIST =			\
+	filenew.xpm		\
 	fileopen.xpm		\
 	filesave.xpm
