@@ -21,9 +21,6 @@ Summary:	-
 
 %files
 %defattr(-,root,root)
-
-# from ycpconsole
 /usr/bin/ycpconsole
-
-# from ycpdebugger
 /usr/bin/ycpdebugger
+%doc @docdir@

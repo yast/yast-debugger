@@ -1,4 +1,9 @@
 -------------------------------------------------------------------
+Mon May 26 14:39:33 CEST 2003 - arvin@suse.de
+
+- fixed file list for rpm v4
+
+-------------------------------------------------------------------
 Wed Aug 21 20:07:05 CEST 2002 - ro@suse.de
 
 - fixed neededforbuild (use yast2-devel-packages)
