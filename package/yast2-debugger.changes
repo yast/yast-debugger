@@ -1,4 +1,9 @@
 -------------------------------------------------------------------
+Tue Feb  3 10:35:56 CET 2004 - visnov@suse.cz
+
+- Fix compilation for NI
+
+-------------------------------------------------------------------
 Mon May 26 14:39:33 CEST 2003 - arvin@suse.de
 
 - fixed file list for rpm v4

@@ -15,7 +15,7 @@ BUILT_SOURCES =			\
 	base.moc.cc		\
 	oscar.moc.cc
 
-ycpdebugger_LDADD = -lycp			\
+ycpdebugger_LDADD = -lycp -ly2			\
 	-L$(QTLIBDIR) -lqt-mt -lXext -lX11
 
 base.o base.lo:		base.moc.cc

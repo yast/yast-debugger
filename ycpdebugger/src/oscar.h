@@ -8,13 +8,11 @@
 #ifndef OSCAR_H
 #define OSCAR_H
 
+#include <YCP.h>
 
 #include <qvbox.h>
 #include <qtextview.h>
 #include <qpushbutton.h>
-
-#include <ycp/YCPParser.h>
-
 
 class Oscar : public QVBox
 {

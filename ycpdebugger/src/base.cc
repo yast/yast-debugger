@@ -20,7 +20,7 @@
 #include <qtoolbar.h>
 #include <qtoolbutton.h>
 
-#include <ycp/YCPParser.h>
+#include <ycp/Parser.h>
 
 #include "base.h"
 #include "utils.h"
@@ -638,13 +638,13 @@ Bibo::handle_ycpblock (int num)
 	}
     }
 
-    YCPParser parser ((const char*) tmp);
-    YCPValue value = parser.parse ();
+    Parser parser ((const char*) tmp);
+    YCode* value = parser.parse ();
 
-    if (value.isNull ())
+    if (!value || value->isError ())
 	oscar[num]->setText (tmp);
     else
-	oscar[num]->setText (value);
+	oscar[num]->setText (value->evaluate ());
 
     oscar[num]->show ();
 }
